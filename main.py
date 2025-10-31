@@ -2,4 +2,11 @@ def get_book_text(filepath: str) -> str:
     with open(filepath) as f:
         file_contents = f.read()
     return file_contents
-print(get_book_text("books/frankenstein.txt"))
+
+def word_counter(book:str) -> int:
+    word_count = len(book.split())
+    return word_count
+
+word_count = word_counter(get_book_text("books/frankenstein.txt"))
+print(f'Found {word_count} total words')
+
